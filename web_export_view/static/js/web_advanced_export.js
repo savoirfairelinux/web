@@ -29,10 +29,10 @@ openerp.web_export_view = function(instance, m) {
             var self = this;
             this._super.apply(this, arguments);
             self.$el.find('.oe_sidebar').append(QWeb.render('AddExportViewMain', {widget: self}));
-            self.$el.find('.oe_sidebar_export_view_xls').on('click', self.on_sidebar_export_view_xls);
+            self.$el.find('.oe_sidebar_export_view_xls').on('click', function () {self.on_sidebar_export_typed_view('xls')});
         },
 
-        on_sidebar_export_view_xls: function() {
+        on_sidebar_export_typed_view: function(export_type) {
             // Select the first list of the current (form) view
             // or assume the main view is a list view and use that
             var self = this,
@@ -97,7 +97,7 @@ openerp.web_export_view = function(instance, m) {
             });
             $.blockUI();
             view.session.get_file({
-                url: '/web/export/xls_view',
+                url: '/web/export/' + export_type + '_view',
                 data: {data: JSON.stringify({
                     model : view.model,
                     headers : export_columns_names,
