@@ -1,6 +1,6 @@
 //  @@@ web_export_view custom JS @@@
 //#############################################################################
-//    
+//
 //    Copyright (C) 2012 Agile Business Group sagl (<http://www.agilebg.com>)
 //    Copyright (C) 2012 Therp BV (<http://therp.nl>)
 //
@@ -76,12 +76,12 @@ openerp.web_export_view = function(instance, m) {
                                 export_row.push(instance.web.parse_value(text, {'type': "float"}));
                             }
                             else if (cell.classList.contains("oe_list_field_boolean")){
-                        	var data_id = $( '<div>' + cell.innerHTML + '</div>');
+                            var data_id = $( '<div>' + cell.innerHTML + '</div>');
                                 if(data_id.find('input').get(0).checked){
-                                	export_row.push(_t("True"));
+                                    export_row.push(_t("True"));
                                 }
                                 else {
-                                	export_row.push(_t("False"));
+                                    export_row.push(_t("False"));
                                 }
                             }
                             else if (cell.classList.contains("oe_list_field_integer")){
