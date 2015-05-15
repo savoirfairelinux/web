@@ -6,6 +6,7 @@
         <button class="oe_dropdown_toggle oe_dropdown_arrow">Export Current View</button>
         <ul class="oe_dropdown_menu">
             <li class="oe_sidebar_export_view_xls"><span>Excel</span></li>
+            <li class="oe_sidebar_export_view_pdf"><span>PDF</span></li>
         </ul>
     </div>
 </t>

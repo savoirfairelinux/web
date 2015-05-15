@@ -25,7 +25,7 @@ except ImportError:
 
 from openerp.addons.web import http as openerpweb
 
-from openerp.addons.web.controllers.main import ExcelExport
+from openerp.addons.web.controllers.main import ExcelExport, ExportFormat
 
 
 class ExcelExportView(ExcelExport):
@@ -52,3 +52,25 @@ class ExcelExportView(ExcelExport):
             ],
             cookies={'fileToken': token}
         )
+
+
+class PdfExportView(ExcelExportView):
+    _cp_path = '/web/export/pdf_view'
+
+    @property
+    def content_type(self):
+        return 'application/pdf'
+
+    def filename(self, base):
+        return base + '.pdf'
+
+    def from_data(self, fields, rows):
+        """ Conversion method from OpenERP's export data to whatever the
+        current export class outputs
+
+        :params list fields: a list of fields to export
+        :params list rows: a list of records to export
+        :returns:
+        :rtype: bytes
+        """
+        raise NotImplementedError()

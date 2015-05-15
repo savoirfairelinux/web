@@ -30,6 +30,7 @@ openerp.web_export_view = function(instance, m) {
             this._super.apply(this, arguments);
             self.$el.find('.oe_sidebar').append(QWeb.render('AddExportViewMain', {widget: self}));
             self.$el.find('.oe_sidebar_export_view_xls').on('click', function () {self.on_sidebar_export_typed_view('xls')});
+            self.$el.find('.oe_sidebar_export_view_pdf').on('click', function () {self.on_sidebar_export_typed_view('pdf')});
         },
 
         on_sidebar_export_typed_view: function(export_type) {
