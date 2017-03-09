@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<openerp>
+<odoo>
     <data>
         <template id="web_widget_timepicker_assets_backend" name="web_widget_timepicker assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
@@ -11,4 +11,4 @@
             </xpath>
         </template>
     </data>
-</openerp>
+</odoo>
