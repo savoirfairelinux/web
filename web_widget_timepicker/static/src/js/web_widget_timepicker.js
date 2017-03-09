@@ -3,10 +3,10 @@ odoo.define('web_widget_timepicker', function (require) {
 
     var core = require('web.core');
     var formats = require('web.formats');
-    var common = require('web.form_common');    
+    var common = require('web.form_common');
 
     var TimePickerField = common.AbstractField.extend(common.ReinitializeFieldMixin, {
-        is_field_number: true,        
+        is_field_number: true,
         template: "TimePickerField",
         internal_format: 'float_time',
         widget_class: 'oe_form_field_time',
@@ -15,7 +15,7 @@ odoo.define('web_widget_timepicker', function (require) {
         },
         init: function (field_manager, node) {
             this._super(field_manager, node);
-            
+
             this.internal_set_value(0);
 
             this.options = _.defaults( this.options, {
@@ -27,9 +27,9 @@ odoo.define('web_widget_timepicker', function (require) {
         },
         initialize_content: function() {
             if(!this.get("effective_readonly")) {
-                this.$el.find('input').timepicker(this.options);                    
-                this.setupFocus(this.$('input'));                   
-            }   
+                this.$el.find('input').timepicker(this.options);
+                this.setupFocus(this.$('input'));
+            }
         },
         is_syntax_valid: function() {
             if (!this.get("effective_readonly") && this.$("input").size() > 0) {
@@ -55,7 +55,7 @@ odoo.define('web_widget_timepicker', function (require) {
                 height: height,
                 width: width
             });
-        },                        
+        },
         store_dom_value: function () {
             if (!this.get('effective_readonly')) {
                 this.internal_set_value(
@@ -64,13 +64,13 @@ odoo.define('web_widget_timepicker', function (require) {
             }
         },
         parse_value: function(val, def) {
-            return formats.parse_value(val, {"widget": this.internal_format}, def);  
+            return formats.parse_value(val, {"widget": this.internal_format}, def);
         },
         format_value: function(val, def) {
             return formats.format_value(val, {"widget": this.internal_format}, def);
         },
         render_value: function() {
-            var show_value = this.format_value(this.get('value'),'');             
+            var show_value = this.format_value(this.get('value'),'');
 
             if (!this.get("effective_readonly")) {
                 this.$input = this.$el.find('input');
@@ -84,6 +84,6 @@ odoo.define('web_widget_timepicker', function (require) {
     core.form_widget_registry.add('timepicker', TimePickerField);
 
     return {
-        TimePickerField: TimePickerField,    
+        TimePickerField: TimePickerField,
     };
 });
