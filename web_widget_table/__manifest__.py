@@ -1,14 +1,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "web_widget_table",
-    "cateogry": "Hidden",
-    "summary": "This widget allows to display tables using Dtatable jQeury library.",
-    "author": "Savoir-faire Linux",
+    "name": "Web Datatable Widget",
+    "cateogry": "web",
+    "summary": "This widget allows to display tables using Datatable jQeury library.",
+    "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "maintainer": "Savoir-faire Linux",
-    "website": "http://www.savoirfairelinux.com",
-    "license": "LGPL-3",
-    "version": "0.1",
+    "website": "https://github.com/OCA/web",
+    "license": "ALGPL-3.0",
+    "version": "11.0.1.0.0",
     "depends": ["web"],
     "data": [
         "views/assets.xml",
